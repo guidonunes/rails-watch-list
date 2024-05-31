@@ -17,11 +17,13 @@ class BookmarksController < ApplicationController
   end
 
   def destroy
-    @bookmark.destroy!
-    redirect_to root_path, notice: 'Bookmark was successfully destroyed.', status: :see_other
+    @bookmark = Bookmark.find(params[:id])
+    @bookmark.destroy
+    redirect_to list_path(@bookmark.list), notice: 'Bookmark was successfully destroyed.', status: :see_other
   end
 
   private
+
   def set_list
     @list = List.find(params[:list_id])
   end
