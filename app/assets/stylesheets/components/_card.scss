@@ -1,10 +1,32 @@
+body {
+  background-color: $raven;
+  color: $light-gray;
+}
+
+h3 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+
 .card-movie {
   overflow: hidden;
   box-shadow: 0 0 15px #00000033;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 12px;
   transition: transform .2s;
+  background-color: $slate;
+  color: $light-gray;
 
   &:hover {
       transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
   }
+}
+
+.card-img-top {
+  border-radius: 12px;
+  box-shadow: 0 0 15px #00000033;
 }

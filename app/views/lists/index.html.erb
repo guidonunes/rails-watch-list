@@ -1,9 +1,18 @@
-<h1>Lists</h1>
 
-<ul>
-  <% @lists.each do |list| %>
-    <li><%=link_to list.name, list_path(list) %></li>
-  <% end  %>
-</ul>
 
 <%= link_to "Create a Movie List", new_list_path, class: "btn btn-primary"%>
+
+
+  <div class="row mt-5 mb-5">
+    <% @lists.each do |list| %>
+      <div class="card col-4 mb-3 mx-auto card-movie" style="width: 18rem">
+        <img src= <%=asset_path('card-list-cover.png')%> class="card-img-top pt-3 " alt="movie banner">
+          <div class="card-body">
+            <h5 class="card-title"><strong> <%=link_to list.name, list_path(list) %></strong></h5>
+             <%= link_to list_path(list), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: "btn btn-primary" do  %>
+              <i class="fa-regular fa-trash-can"></i>
+            <% end %>
+          </div>
+    </div>
+    <% end %>
+  </div>
