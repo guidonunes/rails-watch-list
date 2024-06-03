@@ -1,6 +1,9 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(<%= asset_path('banner.jpg') %>);">
+<div class="banner mb-5" style="background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(<%= asset_path('banner.jpg') %>);">
   <div class="container">
     <h1>Save any kind of movies</h1>
     <p>Power your imagination.</p>
+  </div>
+  <div class="text-center m-5">
+    <%= link_to "Create a Movie List", new_list_path, class: "btn btn-ghost-main align-center"%>
   </div>
 </div>

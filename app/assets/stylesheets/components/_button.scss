@@ -12,3 +12,33 @@
     border: 1px solid $red;
   }
 }
+
+.btn-ghost-bordeless {
+  color: $light-gray;
+  border: none;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.4s ease;
+
+  &:hover {
+    color: $red;
+    border:none;
+  }
+}
+
+.btn-ghost-main {
+  color: $light-gray;
+  border: 2px solid $light-gray;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: bolder;
+  opacity: 0.9;
+  transition: opacity 0.4s ease;
+
+  &:hover {
+    color: $red;
+    border: 2px solid $red;
+  }
+}
