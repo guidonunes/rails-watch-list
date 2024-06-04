@@ -18,7 +18,7 @@ class ListsController < ApplicationController
       redirect_to root_path, notice: 'List successfully created', status: :see_other
 
     else
-      render :list, status: :unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
