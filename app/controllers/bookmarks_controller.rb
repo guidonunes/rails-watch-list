@@ -2,7 +2,7 @@ class BookmarksController < ApplicationController
   before_action :set_list, only: %i[new create]
   def new
     @bookmark = Bookmark.new
-    @movies = Movie.all
+    @movies = MovieApiClient.top_rated_movies
   end
 
   def create
@@ -26,6 +26,10 @@ class BookmarksController < ApplicationController
 
   def set_list
     @list = List.find(params[:list_id])
+  end
+
+  def parse_movie_ids(movies)
+    movies.each { |movie| movie['id'] = movie['id'].to_i }
   end
 
   def bookmark_params
