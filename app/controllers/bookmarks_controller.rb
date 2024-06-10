@@ -12,6 +12,7 @@ class BookmarksController < ApplicationController
     if @bookmark.save
       redirect_to list_path(@list)
     else
+      @movies = MovieApiClient.top_rated_movies
       render :new, status: :unprocessable_entity
     end
   end
@@ -28,9 +29,6 @@ class BookmarksController < ApplicationController
     @list = List.find(params[:list_id])
   end
 
-  def parse_movie_ids(movies)
-    movies.each { |movie| movie['id'] = movie['id'].to_i }
-  end
 
   def bookmark_params
     params.require(:bookmark).permit(:comment, :movie_id)

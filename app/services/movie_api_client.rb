@@ -5,7 +5,7 @@ class MovieApiClient
 
   def self.top_rated_movies
     response = HTTP.get("#{BASE_URL}/movie/top_rated")
-    parse_response(response)['results'] # Return only the 'results' array
+    parse_response(response)['results'] || [] # Return only the 'results' array
   end
 
   def self.movie_details(movie_id)
