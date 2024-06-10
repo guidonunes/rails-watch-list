@@ -72,4 +72,5 @@ gem "simple_form"
 gem "sassc-rails"
 gem "dotenv-rails"
 gem "cloudinary"
-gem 'http'
+gem 'json', '~> 2.6', '>= 2.6.3'
+gem 'open-uri'
